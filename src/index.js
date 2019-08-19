@@ -59,7 +59,7 @@ function setup() {
   }, 10);
 
   models.push(new ShipModel());
-  models.push(new BallModel({ x: container.width / 2, y: container.height / 2 }));
+  models.push(new BallModel({ x: 200, y: 200 }));
 
   function createModel(data) {
     return new AirModel(data);
