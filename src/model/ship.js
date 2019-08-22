@@ -1,6 +1,8 @@
 export default class Ship {
-  constructor() {
-    this.x = 500;
+  constructor({ x, y }) {
+      this.x = x;
+      this.y = y;
+      console.log(y);
     this.speed = 20;
     this.worldCounter = 0;
     this.move = {

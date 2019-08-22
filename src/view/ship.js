@@ -13,7 +13,7 @@ export default class Ship extends View {
   }
 
   render() {
-    this.sprite.y = 900;
+    this.sprite.y = this.model.y;
     this.sprite.x = this.model.x;
   }
 }
