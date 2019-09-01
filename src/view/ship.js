@@ -10,10 +10,11 @@ export default class Ship extends View {
     super(scene, model);
     this.sprite = new Sprite(Texture.from(shipImg));
     scene.addChild(this.sprite);
+    this.model = model;
   }
 
   render() {
-    this.sprite.y = 1000;
+    this.sprite.y = this.model.y;
     this.sprite.x = this.model.x;
   }
 }

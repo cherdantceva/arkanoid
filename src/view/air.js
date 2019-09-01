@@ -4,6 +4,7 @@ import View from './view';
 
 const Sprite = PIXI.Sprite,
   Texture = PIXI.Texture;
+
 export default class Air extends View {
   constructor(scene, model) {
     super(scene, model);

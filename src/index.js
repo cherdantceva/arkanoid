@@ -59,7 +59,9 @@ function setup() {
     }
   }, 10);
 
-  models.push(new ShipModel());
+  const ship = new ShipModel({ x: 500, y: 1000 });
+  ship.advantages.add(new Collision(ship, models));
+  models.push(ship);
 
   const ball = new BallModel({ x: container.width / 2, y: container.height / 2 });
   ball.advantages.add(new Collision(ball, models));
