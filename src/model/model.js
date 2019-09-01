@@ -1,7 +1,7 @@
 import Advantages from './advantages';
 
 export default class Model {
-  constructor( { kind = null } = {} ) {
+  constructor({ kind = null } = {}) {
     this.kind = kind;
     this.destroyed = false;
     this.advantages = new Advantages();
@@ -10,5 +10,4 @@ export default class Model {
   destroy() {
     this.destroyed = true;
   }
-
 }

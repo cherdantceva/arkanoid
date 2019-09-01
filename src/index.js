@@ -42,7 +42,7 @@ function setup() {
 
   const enemy = [{ x: 10, y: 10 }, { x: 200, y: 10 }, { x: 400, y: 10 }, { x: 600, y: 10 }];
 
-  const UPS = 5;
+  const UPS = 50;
 
   const models = [];
 

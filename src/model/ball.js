@@ -5,7 +5,7 @@ const { min, max } = Math;
 
 export default class Ball extends Model {
   constructor({ x, y }) {
-    super({ kind: "ball" });
+    super({ kind: 'ball' });
     this.x = x;
     this.y = y;
     this.x1 = x + BALL_R;
@@ -32,6 +32,5 @@ export default class Ball extends Model {
 
     this.x1 = this.x + BALL_R;
     this.y1 = this.y + BALL_R;
-
   }
 }

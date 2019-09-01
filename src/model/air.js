@@ -12,21 +12,20 @@ export default class Air extends Model {
   }
 
   update() {
-
-    if(this.destroyed) {
+    if (this.destroyed) {
       return;
     }
 
     const collision = this.advantages.getByName('collision');
 
-    const ball = collision.model.find( ( { kind } ) => kind === "ball" );
+    const ball = collision.model.find(({ kind }) => kind === 'ball');
 
-    const axisY = ball.y > this.y && ball.y < this.y1 || ball.y1 > this.y && ball.y1 < this.y1;
-    const axisX = ball.x > this.x && ball.x < this.x1 || ball.x1 > this.x && ball.x1 < this.x1;
+    const axisY = (ball.y > this.y && ball.y < this.y1) || (ball.y1 > this.y && ball.y1 < this.y1);
+    console.log(axisY);
+    const axisX = (ball.x > this.x && ball.x < this.x1) || (ball.x1 > this.x && ball.x1 < this.x1);
 
-    if(axisY && axisX) {
+    if (axisY && axisX) {
       this.destroy();
     }
-
   }
 }
