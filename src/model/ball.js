@@ -19,8 +19,28 @@ export default class Ball extends Model {
       }
     const collision = this.advantages.getByName('collision');
 
+
+      const prev = { x: this.x, y: this.y };
+
     this.x += this.speed.x;
     this.y += this.speed.y;
+
+    const airs = collision.model.filter(({ kind }) => kind === 'air');
+
+
+    const collisionAirIndex = airs.findIndex( (air) => {
+      return collision( this, air );
+    } );
+
+    if(collisionAirIndex > -1) {
+      airs[collisionAirIndex]
+
+
+
+    }
+
+
+    collision();
 
     this.x = max(0, min(this.x, PLAYGROUND_WIDTH - BALL_R));
     this.y = max(0, min(this.y, PLAYGROUND_HEIGHT - BALL_R));
@@ -33,4 +53,13 @@ export default class Ball extends Model {
     }
     const air = collision.model.find(({ kind }) => kind === 'air');
   }
+}
+
+function collision (rect1, rect2) {
+  return (
+    rect1.x < rect2.x1 &&
+    rect1.x1 > rect2.x &&
+    rect1.y < rect2.y1 &&
+    rect1.y1 > rect2.y
+  );
 }
