@@ -75,7 +75,7 @@ function setup() {
       worldCounter++;
       models.map(model => model.update());
     }
-  }, 5);
+  }, 10);
 
   const ship = new ShipModel({ x: 500, y: 1000 });
   ship.advantages.add(new Collision(ship, models));

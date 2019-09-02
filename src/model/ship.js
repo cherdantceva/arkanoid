@@ -3,7 +3,7 @@ import { SHIP_WIDTH, SHIP_HEIGHT } from '../defs';
 
 export default class Ship extends Model {
   constructor({ x, y }) {
-    super();
+     super({ kind: 'ship' });
     this.x = x;
     this.y = y;
     this.x1 = x + SHIP_WIDTH;
