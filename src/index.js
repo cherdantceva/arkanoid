@@ -7,7 +7,7 @@ import BallModel from './model/ball';
 import BallView from './view/ball';
 
 import bg from '../res/background.png';
-import { PLAYGROUND_HEIGHT, PLAYGROUND_WIDTH } from './defs';
+import { PLAYGROUND_HEIGHT, PLAYGROUND_WIDTH, AIR_WIDTH } from './defs';
 import Collision from './model/collision';
 
 const CreateApp = PIXI.Application,
@@ -40,7 +40,25 @@ function setup() {
   container.addChild(texture);
   document.body.appendChild(application.view);
 
-  const enemy = [{ x: 10, y: 10 }, { x: 200, y: 10 }, { x: 400, y: 10 }, { x: 600, y: 10 }];
+  const enemy = [
+      { x: AIR_WIDTH, y: 60 },
+
+      { x: AIR_WIDTH * 4 + 30, y: 60 },
+
+      { x: AIR_WIDTH * 7 + 60, y: 60 },
+
+      { x: AIR_WIDTH * 9 + 80, y: 60 },
+
+
+      { x: AIR_WIDTH, y: 560 },
+
+      { x: AIR_WIDTH * 4 + 30, y: 560 },
+
+      { x: AIR_WIDTH * 7 + 60, y: 560 },
+
+      { x: AIR_WIDTH * 9 + 80, y: 560 },
+
+  ];
 
   const UPS = 50;
 
@@ -57,7 +75,7 @@ function setup() {
       worldCounter++;
       models.map(model => model.update());
     }
-  }, 10);
+  }, 5);
 
   const ship = new ShipModel({ x: 500, y: 1000 });
   ship.advantages.add(new Collision(ship, models));

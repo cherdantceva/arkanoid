@@ -3,11 +3,13 @@ import { AIR_HEIGHT, AIR_WIDTH } from '../defs';
 
 export default class Air extends Model {
   constructor({ x, y }) {
-    super();
+    super({ kind: 'air' });
     this.x = x;
     this.y = y;
     this.x1 = x + AIR_WIDTH;
     this.y1 = y + AIR_HEIGHT;
+    this.centerX = x + AIR_WIDTH /2;
+    this.centerY = y + AIR_HEIGHT /2;
     this.worldCounter = 0;
   }
 
@@ -24,7 +26,9 @@ export default class Air extends Model {
     const axisX = (ball.x > this.x && ball.x < this.x1) || (ball.x1 > this.x && ball.x1 < this.x1);
 
     if (axisY && axisX) {
+
       this.destroy();
     }
+
   }
 }
