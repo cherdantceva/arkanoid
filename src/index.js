@@ -60,7 +60,7 @@ function setup() {
 
   ];
 
-  const UPS = 50;
+  const UPS = 20;
 
   const models = [];
 

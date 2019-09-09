@@ -48,11 +48,5 @@ export default class Ship extends Model {
       this.x += this.speed;
     }
 
-    const axisY = (ball.y > this.y && ball.y < this.y1) || (ball.y1 > this.y && ball.y1 < this.y1);
-    const axisX = (ball.x > this.x && ball.x < this.x1) || (ball.x1 > this.x && ball.x1 < this.x1);
-
-    if (axisY && axisX) {
-      ball.speed = { ...ball.speed, y: -ball.speed.y };
-    }
   }
 }
