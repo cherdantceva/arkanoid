@@ -1,5 +1,6 @@
 import { BALL_R, PLAYGROUND_HEIGHT, PLAYGROUND_WIDTH } from '../defs';
 import Model from './model';
+import { collision } from "./math"
 
 const { min, max, abs } = Math;
 
@@ -37,6 +38,8 @@ export default class Ball extends Model {
 
 
     if(collisionAirIndex > -1) {
+
+      //debugger;
 
       const air = airs[collisionAirIndex];
 
@@ -124,13 +127,4 @@ export default class Ball extends Model {
     }
 
   }
-}
-
-function collision (rect1, rect2) {
-  return (
-    rect1.x < rect2.x1 &&
-    rect1.x1 > rect2.x &&
-    rect1.y < rect2.y1 &&
-    rect1.y1 > rect2.y
-  );
 }

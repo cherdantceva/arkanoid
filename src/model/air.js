@@ -1,5 +1,6 @@
 import Model from './model';
 import { AIR_HEIGHT, AIR_WIDTH } from '../defs';
+import { collision } from "./math"
 
 export default class Air extends Model {
   constructor({ x, y }) {
@@ -26,14 +27,4 @@ export default class Air extends Model {
     }
 
   }
-}
-
-
-function collision (rect1, rect2) {
-  return (
-    rect1.x <= rect2.x1 &&
-    rect1.x1 >= rect2.x &&
-    rect1.y <= rect2.y1 &&
-    rect1.y1 >= rect2.y
-  );
 }
